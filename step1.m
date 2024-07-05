@@ -9,8 +9,8 @@ w = 2*pi*f;
 
 eps_inf = 9.5; 
 wp = 1.36e16;   
-gamma = 1.05e14;  
-% gamma = 1.05e12;
+%gamma = 1.05e14;  
+gamma = 1.05e12;
 eps_au = eps_inf-wp^2./(w.^2+1i.*w.*gamma);
 
 % figure 
@@ -26,6 +26,8 @@ ksp = w/c .* nsp;
 
 figure
 plot(real(ksp)/wp,w/wp)
+hold on
+plot(imag(ksp)/wp,w/wp,'--')
 xlabel('k_{sp}/\omega_{p}'); ylabel('\omega/\omega_{p}')
-title('Single Layer Interface')
+title('Lossy Single Layer Interface')
 
